@@ -22,6 +22,7 @@
     "eslint-config-next": "16.2.2",
     "eslint-config-zen-dev": "file:../../dev/zen-dev",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "axios": "1.14.0"
   }
 }
