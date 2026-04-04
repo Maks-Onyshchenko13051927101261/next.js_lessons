@@ -1,16 +1,15 @@
 import allEndpoint from "@/services/api.services";
-import { useEffect, useState } from "react";
 import { UserComponent } from "./UserComponent";
-import { IUserModel } from "@/models/IUserModel";
+import useFetch from "@/services/fetchHooks";
+// "use client";
 
 export const UsersComponent = () => {
-    const [user, setUser] = useState<IUserModel[]>([]);
-    useEffect(() => {
-        allEndpoint.users().then(data => setUser(data))
-    },[]);
+    const {loading, error, data: users} = useFetch(allEndpoint.users)
+    if (loading) return <p>Loading...</p>
+    if (error) return <p>Somthing wrong</p>
     return (
         <div>{
-            user.map(user => (<UserComponent user={user} key={user.id}/>))
+            users.map(user => (<UserComponent user={user} key={user.id}/>))
         }</div>
     );
 };
