@@ -1,7 +1,7 @@
+"use client";
 import allEndpoint from "@/services/api.services";
-import { UserComponent } from "./UserComponent";
 import useFetch from "@/services/fetchHooks";
-// "use client";
+import { UserComponent } from "./UserComponent";
 
 export const UsersComponent = () => {
     const {loading, error, data: users} = useFetch(allEndpoint.users)

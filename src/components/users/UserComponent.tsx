@@ -4,8 +4,8 @@ import { FC } from "react";
 type UserPropsType = {
     user: IUserModel;
 }
-export const UserComponent:FC<UserPropsType> = ({user:{id, username}}) => {
+export const UserComponent:FC<UserPropsType> = ({user:{id, name}}) => {
     return (
-        <div>№id:{id} - {username}</div>
+        <div>№ {id} - {name}</div>
     );
 };

@@ -1,6 +1,7 @@
-import allEndpoint from "@/services/api.services"
-import useFetch from "@/services/fetchHooks"
-import { PostComponent } from "./PostComponent"
+"use client";
+import allEndpoint from "@/services/api.services";
+import useFetch from "@/services/fetchHooks";
+import { PostComponent } from "./PostComponent";
 
 export const PostsComponent = () => {
     const {loading, error, data: posts} = useFetch(allEndpoint.posts)

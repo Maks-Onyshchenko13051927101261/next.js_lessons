@@ -1,6 +1,7 @@
-import useFetch from "@/services/fetchHooks"
-import { CommentComponent } from "./CommentComponent"
-import allEndpoint from "@/services/api.services"
+"use client";
+import allEndpoint from "@/services/api.services";
+import useFetch from "@/services/fetchHooks";
+import { CommentComponent } from "./CommentComponent";
 
 export const CommentsComponent = () => {
     const {loading, error, data: comments} = useFetch(allEndpoint.comments)
