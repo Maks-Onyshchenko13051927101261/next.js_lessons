@@ -1,9 +1,10 @@
 import Link from "next/link";
+import "../menu/menu.css";
 
 const MenuComponent = () => {
     return (
         <div>
-            <ul>
+            <ul className="menu-list">
                  <li>
                     <Link href={"/"}>Home</Link>
                  </li>
