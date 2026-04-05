@@ -7,14 +7,14 @@ const axiosInstance = axios.create({
     headers:{}
 });
 
-const response = <T,>(endpoint:string) => async():Promise<T> => {
-    const axiosResponse = await axiosInstance.get<T>(endpoint);
-    return axiosResponse.data;
+const response = async <T,>(endpoint:string):Promise<T> => {
+    const {data} = await axiosInstance.get<T>(endpoint);
+    return data;
 };
 
-const createEndpoint = <T,>(endpoint:string) => ({
-    getAll: response<T[]>(endpoint),
-    getById: (id: string) => response<T>(`${endpoint}/${id}`),
+const createEndpoint = <T,>(endpoint: string) => ({
+    getAll: () => response<T[]>(endpoint),
+    getById: (id: string | number) => response<T>(`${endpoint}/${id}`),
 });
 
 export default createEndpoint;
