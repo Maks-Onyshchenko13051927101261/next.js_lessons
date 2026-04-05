@@ -4,7 +4,7 @@ import useFetch from "@/services/fetchHooks";
 import { PostComponent } from "./PostComponent";
 
 export const PostsComponent = () => {
-    const {loading, error, data: posts} = useFetch(allEndpoint.posts)
+    const {loading, error, data: posts} = useFetch(allEndpoint.posts.getAll)
     if (loading) return <p>Loading...</p>
     if (error) return <p>Somthing wrong</p>
     return (

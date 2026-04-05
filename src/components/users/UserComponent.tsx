@@ -1,4 +1,5 @@
 import { IUserModel } from "@/models/IUserModel";
+import Link from "next/link";
 import { FC } from "react";
 
 type UserPropsType = {
@@ -6,6 +7,8 @@ type UserPropsType = {
 }
 export const UserComponent:FC<UserPropsType> = ({user:{id, name}}) => {
     return (
-        <div>№ {id} - {name}</div>
+        <div>
+            <Link href={`/users/${id}`}>№ {id} - {name}</Link>
+        </div>
     );
 };
