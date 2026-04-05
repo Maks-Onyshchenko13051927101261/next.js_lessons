@@ -1,4 +1,5 @@
 import { IPostModel } from "@/models/IPostModel";
+import Link from "next/link";
 import { FC } from "react";
 
 type PostPropsType = {
@@ -6,6 +7,8 @@ type PostPropsType = {
 }
 export const PostComponent:FC<PostPropsType> = ({post:{id, title}}) => {
     return (
-        <div>{id} - {title}</div>
+        <div>
+            <Link href={`/posts/${id}`}>Post № {id} - {title}</Link>
+        </div>
     );
 }
