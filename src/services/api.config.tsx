@@ -1,4 +1,4 @@
-import { CarModel } from "@/models/CarModel";
+import { ICarModel } from "@/models/CarModel";
 import axios from "axios";
 
 const baseUrl = process.env.NEXT_PUBLIC_CARS_API_URL;
@@ -9,7 +9,7 @@ const axiosInstance = axios.create({
 
 const carServices = {
     getAllCars: async () => {
-        const axiosResponse = await axiosInstance.get<CarModel[]>("/cars");
+        const axiosResponse = await axiosInstance.get<ICarModel[]>("/cars");
         return axiosResponse.data;
     }
 }
