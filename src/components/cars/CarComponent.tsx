@@ -9,7 +9,7 @@ export const CarComponent:FC<CarsPropsType> = ({car:{brand, price, year}}) => {
     return (
         <div>
             <h2>Brand: {brand}</h2>
-            <p>Price: ${price.toFixed(2)}</p>
+            <p>Price: ${price}</p>
             <p>Year: {year}</p>
         </div>
     )

@@ -3,17 +3,16 @@
 import { ICarModel } from "@/models/CarModel";
 import carServices from "@/services/api.config";
 import { useEffect, useState } from "react";
-import { CarComponent } from "./CarCmponent";
+import { CarComponent } from "./CarComponent";
 
 export const CarsComponent = () => {
     const [cars, setCars] = useState<ICarModel[]>([]);
     useEffect(() => {
-        carServices.getAllCars().then((cars) => setCars(cars));
+        carServices.getAllCars().then((cars) => setCars(cars)).catch((error) => console.error(error));
     }, []);
 
     return (
         <div>
-            <h1>Cars</h1>
             {cars.map((car) => (
                 <CarComponent key={car.id} car={car} />
             ))}
