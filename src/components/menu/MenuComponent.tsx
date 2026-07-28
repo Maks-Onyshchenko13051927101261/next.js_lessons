@@ -6,6 +6,9 @@ const MenuComponent = () => {
             <li>
                 <Link href={"/cars"}>Cars list</Link>
             </li>
+            <li>
+                <Link href={"/form"}>Create Car</Link>
+            </li>
         </ul>
     );
 };
