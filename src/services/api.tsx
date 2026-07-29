@@ -4,5 +4,7 @@ const baseUrl = process.env.NEXT_PUBLIC_CARS_API_URL;
 
 export const axiosInstance = axios.create({
   baseURL: baseUrl,
-  headers: {}
+  headers: {
+    "Content-Type": "application/json"
+  }
 });
