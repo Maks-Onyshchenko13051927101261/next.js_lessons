@@ -15,7 +15,9 @@ export const CreateCarForm = () => {
         try {
             await carServices.addCar(data);
             reset();
+            alert("Car added successfully!");
         } catch (error) {
+            alert("Failed to add car.");
             console.error("Error adding car:", error);
         };
     };
