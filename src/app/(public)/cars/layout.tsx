@@ -5,7 +5,7 @@ export const metadata: Metadata = {
     description: "List of all available cars"
 };
 
-type Props = { children: React.ReactNode }
+type Props = { children: React.ReactNode };
 const CarsLayout = ({ children }: Props) => {
     return (
         <div>

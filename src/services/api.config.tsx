@@ -8,7 +8,7 @@ const carServices = {
     },
     getById: async (id: string) => {
         const axiosResponse = await axiosInstance.get<ICarModel>(`/cars/${id}`);
-        return axiosResponse.data.id;
+        return axiosResponse.data;
     },
     addCar: async (car: ICarModel) => {
         await axiosInstance.post("/cars", car);
