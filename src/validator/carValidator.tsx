@@ -18,5 +18,5 @@ export const carValidator = Joi.object({
     .max(2026)
     .messages({ 
         "number.min": "Year must be 1986 or later",
-        "number.max": "Year must be 2026 or earlier" }),
+        "number.max": "Year must be 2026 or earlier" })
 });

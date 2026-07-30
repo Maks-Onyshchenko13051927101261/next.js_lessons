@@ -1,19 +1,22 @@
 "use client";
 
-import carServices from "@/services/api.config";
-import { zodResolver } from "@hookform/resolvers/zod";
+// import carServices from "@/services/api.config";
+import { ICarModel } from "@/models/CarModel";
+import { carValidator } from "@/validator/carValidator";
+import { joiResolver } from "@hookform/resolvers/joi";
 import { useForm } from "react-hook-form";
-import { AddCarFormData, addCarSchema } from "../../../lib/schema";
 import "../form/formStyle.css";
 
 export const CreateCarForm = () => {
-    const {register, handleSubmit, reset, formState: {errors}} = useForm<AddCarFormData>({
-        resolver: zodResolver(addCarSchema),
+    const {register, handleSubmit, reset, formState: {errors}} = useForm<ICarModel>({
+        mode: "all",
+        resolver: joiResolver(carValidator)
     });
 
-    const onSubmit = async (data: AddCarFormData) => {
+    const onSubmit = async (data: ICarModel) => {
         try {
-            await carServices.addCar(data);
+            // await carServices.addCar(data);
+            console.log(data);
             reset();
             alert("Car added successfully!");
         } catch (error) {
