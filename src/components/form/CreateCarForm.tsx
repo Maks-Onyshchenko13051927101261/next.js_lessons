@@ -1,7 +1,7 @@
 "use client";
 
-// import carServices from "@/services/api.config";
 import { ICarModel } from "@/models/CarModel";
+import carServices from "@/services/api.config";
 import { carValidator } from "@/validator/carValidator";
 import { joiResolver } from "@hookform/resolvers/joi";
 import { useForm } from "react-hook-form";
@@ -15,8 +15,7 @@ export const CreateCarForm = () => {
 
     const onSubmit = async (data: ICarModel) => {
         try {
-            // await carServices.addCar(data);
-            console.log(data);
+            await carServices.addCar(data);
             reset();
             alert("Car added successfully!");
         } catch (error) {

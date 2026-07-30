@@ -11,11 +11,11 @@
     "dependencies": {
         "@hookform/resolvers": "3.1.0",
         "axios": "1.18.1",
+        "joi": "18.2.3",
         "next": "16.2.2",
         "react": "19.2.4",
         "react-dom": "19.2.4",
-        "react-hook-form": "7.81.0",
-        "joi": "18.2.3"
+        "react-hook-form": "7.81.0"
     },
     "devDependencies": {
         "@tailwindcss/postcss": "^4",
@@ -24,7 +24,6 @@
         "@types/react-dom": "^19",
         "eslint": "^9",
         "eslint-config-next": "16.2.2",
-        "eslint-config-zen-dev": "git+ssh://termux/~/tools/gem-dev",
         "tailwindcss": "^4",
         "typescript": "^5"
     }
